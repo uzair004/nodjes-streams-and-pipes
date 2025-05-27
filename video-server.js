@@ -2,9 +2,11 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
+const app = express();
+
 const VIDEO_PATH = path.join(__dirname, 'sample-video.mp4');
 
-app.get('/video', videController)
+app.get('/video', videoController)
 
 
 async function videoController(req, res) {
@@ -42,6 +44,6 @@ async function videoController(req, res) {
 
 }
 
-app.listen(4000, () => {
-  console.log(`🚀 Video streaming server running at http://localhost:${4000}/video`);
+app.listen(8000, () => {
+  console.log(`🚀 Video streaming server running at http://localhost:${8000}/video`);
 });
